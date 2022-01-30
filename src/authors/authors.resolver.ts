@@ -9,13 +9,11 @@ export class AuthorsResolver {
 
   @Query('authors')
   async getAuthors() {
-    console.log('findAll');
     return this.authorsService.findAll();
   }
 
   @Query('author')
   async author(@Args('id') id: number) {
-    console.log('findOneById');
     return this.authorsService.findOneById(id);
   }
 }
